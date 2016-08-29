@@ -6,7 +6,12 @@ function getGraphNodes(tree) {
     return [{
         data: {
             id: tree.id,
-            data: tree.data
+            data: tree.data,
+            /**
+             * TODO: at some point we'll have to sacrifice functional-ness
+             * for performance here and only compute these values once.
+             */
+            numChildren: getNumChildren(tree)
         }
     }].concat(
         tree.children ? tree.children.reduce(
@@ -32,4 +37,11 @@ function getGraphLinks(tree) {
         ), [])
 
         : []
+}
+
+function getNumChildren(tree) {
+    return tree.children ?
+        tree.children.reduce(
+            (numChildren, child) => numChildren + 1 + getNumChildren(child), 0
+        ) : 0
 }

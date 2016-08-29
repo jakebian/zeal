@@ -10,6 +10,7 @@ export class TreeVis extends Component {
     componentDidMount() {
 
         cydagre(cytoscape, dagre)
+        console.log(computeGraph(this.props.tree))
 
         let cyGraph = cytoscape({
             container: this.refs.treeContainer,
@@ -27,6 +28,8 @@ export class TreeVis extends Component {
                         'text-valign': 'bottom',
                         'text-halign': 'center',
                         'text-margin-y': 15,
+                        width: 'mapData(numChildren, 0, 20, 20, 150)',
+                        height: 'mapData(numChildren, 0, 20, 20, 150)'
                     }
                 },
                 {
