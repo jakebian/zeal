@@ -29,7 +29,8 @@ export class TreeVis extends Component {
                         'text-halign': 'center',
                         'text-margin-y': 15,
                         width: 'mapData(numChildren, 0, 20, 20, 150)',
-                        height: 'mapData(numChildren, 0, 20, 20, 150)'
+                        height: 'mapData(numChildren, 0, 20, 20, 150)',
+                        'background-color': 'mapData(completion, 0, 1, #6F7A8C, #72AD5C)'
                     }
                 },
                 {

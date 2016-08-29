@@ -3,6 +3,7 @@ export function computeGraph(tree) {
 }
 
 function getGraphNodes(tree) {
+    const numChildren = getNumChildren(tree);
     return [{
         data: {
             id: tree.id,
@@ -11,7 +12,8 @@ function getGraphNodes(tree) {
              * TODO: at some point we'll have to sacrifice functional-ness
              * for performance here and only compute these values once.
              */
-            numChildren: getNumChildren(tree)
+            numChildren: numChildren,
+            completion: numChildren != 0 ? getNumCompletedChildren(tree) / numChildren : +!!tree.done
         }
     }].concat(
         tree.children ? tree.children.reduce(
@@ -44,4 +46,14 @@ function getNumChildren(tree) {
         tree.children.reduce(
             (numChildren, child) => numChildren + 1 + getNumChildren(child), 0
         ) : 0
+}
+
+function getNumCompletedChildren(tree) {
+    return tree.children ?
+        tree.children.reduce(
+            (numCompleted, child) => numCompleted + (
+                tree.children && tree.children.length ?
+                    getNumCompletedChildren(child) : +!!tree.done
+            ) , 0
+        ) : +!!tree.done
 }

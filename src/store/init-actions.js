@@ -19,7 +19,8 @@ export default (dispatch) => dispatch(updateTree({
                 },
                 {
                     id: 'shit-grandchild-2',
-                    data: {}
+                    data: {},
+                    done: 1
                 }
             ]
         }
