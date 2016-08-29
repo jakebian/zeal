@@ -8,6 +8,9 @@ import { computeGraph } from 'components/TreeVis/util';
 
 export class TreeVis extends Component {
     componentDidMount() {
+
+        cydagre(cytoscape, dagre)
+
         let cyGraph = cytoscape({
             container: this.refs.treeContainer,
             elements: computeGraph(this.props.tree),
@@ -39,12 +42,14 @@ export class TreeVis extends Component {
 
     }
     render() {
-        <div>
-            <div ref='treeContainer' className='tree-container'></div>
-        </div>
+        return (
+            <div>
+                <div ref='treeContainer' className='tree-container'></div>
+            </div>
+        )
     }
 }
 
-export default connect((state) => {
+export default connect((state) => ({
     tree: state.tree
-}, {})(TreeVis)
+}), {})(TreeVis)

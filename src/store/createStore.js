@@ -2,6 +2,7 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import makeRootReducer from './reducers'
+import runInitActions from './init-actions'
 
 export default (initialState = {}, history) => {
   // ======================================================
@@ -39,6 +40,8 @@ export default (initialState = {}, history) => {
       store.replaceReducer(reducers(store.asyncReducers))
     })
   }
+
+  runInitActions(store.dispatch)
 
   return store
 }

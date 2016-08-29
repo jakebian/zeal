@@ -1,4 +1,4 @@
-function computeGraph(tree) {
+export function computeGraph(tree) {
     return getGraphNodes(tree).concat(getGraphLinks(tree))
 }
 
