@@ -43,9 +43,7 @@ export class TreeVis extends Component {
     }
     render() {
         return (
-            <div>
-                <div ref='treeContainer' className='tree-container'></div>
-            </div>
+            <div ref='treeContainer' className='tree-container'></div>
         )
     }
 }

@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux'
 import { routerReducer as router } from 'react-router-redux'
 import { treeReducer as tree} from 'modules/tree'
-import runInitActions from './init-actions'
 
 export const makeRootReducer = (asyncReducers) => {
     return combineReducers({

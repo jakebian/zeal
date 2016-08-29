@@ -3,10 +3,8 @@ import classes from './CoreLayout.scss'
 import '../../styles/core.scss'
 
 export const CoreLayout = ({ children }) => (
-    <div>
-        <div>
-          {children}
-        </div>
+    <div className='coreLayout'>
+        {children}
     </div>
 )
 

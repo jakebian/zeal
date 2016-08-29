@@ -1,28 +1,28 @@
 :global {
-  @import 'base';
-  @import '~normalize.css/normalize';
+    @import 'base';
+    @import '~normalize.css/normalize';
 
-  // Some best-practice CSS that's useful for most apps
-  // Just remove them if they're not what you want
-  html {
-    box-sizing: border-box;
-  }
+    // Some best-practice CSS that's useful for most apps
+    // Just remove them if they're not what you want
+    html {
+        box-sizing: border-box;
+    }
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
+    html,
+    body,
+    .coreLayout {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-}
-
-.tree-container {
-  min-height: 100%;
-  min-width: 100%;
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+    .tree-container {
+        height: 100%;
+        min-height: 500px;
+    }
 }
