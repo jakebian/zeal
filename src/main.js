@@ -31,7 +31,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
 // ========================================================
 if (__DEBUG__) {
   if (window.devToolsExtension) {
-    window.devToolsExtension.open()
+    // window.devToolsExtension.open()
   }
 }
 
