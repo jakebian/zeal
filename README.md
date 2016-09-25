@@ -14,6 +14,13 @@ Get your task tree visualization (with live module reload!)
 
 Check out `src/tasks` for the format.
 
+## Usage
+
+1. Clone the repository
+2. `npm install`
+3. `npm start` to run the application
+4. Replace src/tasks with your own tasks!
+
 ## Filters
 
 Dig into your task tree with filters
