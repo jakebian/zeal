@@ -43,7 +43,7 @@ export class TreeVis extends Component {
 
             this.cy = cytoscape({
                 container: this.refs.treeContainer,
-                elements: computeGraph(this.props.tree),
+                elements: computeGraph(this.props.tree, this.props.filters),
                 layout: {
                   name: 'dagre',
                   rankDir: 'LR'
@@ -83,7 +83,8 @@ export class TreeVis extends Component {
 }
 
 export default connect((state) => ({
-    tree: state.tree
+    tree: state.tree,
+    filters: state.filters
 }), {
     loadTree: updateTree.bind(null, tasks),
     updateTree,

@@ -1,5 +1,14 @@
-export function computeGraph(tree) {
-    return getGraphNodes(tree).concat(getGraphLinks(tree))
+import treeFilters from './filters';
+
+export function computeGraph(tree, filters) {
+
+    const filteredTree = filters.reduce((resultTree, filter) => (
+        treeFilters[filter.key](resultTree, filter.val)
+    ), tree);
+
+    console.log(filteredTree)
+
+    return getGraphNodes(filteredTree).concat(getGraphLinks(filteredTree))
 }
 
 function getGraphNodes(tree) {

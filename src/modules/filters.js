@@ -1,7 +1,6 @@
 const updateActionType = 'filters-update'
 
 export function updateFilters (filters) {
-    console.log('shit....', filters)
     return {
         type: updateActionType,
         filters: filters
