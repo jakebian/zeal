@@ -77,7 +77,8 @@ export class TreeVis extends Component {
                         }
                     },
                 ]
-            }).viewport(lastViewportState);
+            })
+            //.viewport(lastViewportState);
         }, 0)
     }
 }

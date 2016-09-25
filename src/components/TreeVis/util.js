@@ -3,10 +3,8 @@ import treeFilters from './filters';
 export function computeGraph(tree, filters) {
 
     const filteredTree = filters.reduce((resultTree, filter) => (
-        treeFilters[filter.key](resultTree, filter.val)
+        treeFilters[filter.key] ? treeFilters[filter.key](resultTree, filter.val) : resultTree
     ), tree) || {};
-
-    console.log('filteredTree', filteredTree)
 
     return getGraphNodes(filteredTree).concat(getGraphLinks(filteredTree))
 }

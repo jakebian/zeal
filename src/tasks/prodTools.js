@@ -12,7 +12,8 @@ export default {
                     children: [
                         {
                             id: 'general filters architecture',
-                            poms: 2
+                            poms: 2,
+                            done: true,
                         },
                         {
                             id: 'by tags',
@@ -27,9 +28,11 @@ export default {
                         },
                         {
                             id: 'show children of particular node',
+                            done: true,
                         },
                         {
-                            id: 'show leaves only'
+                            id: 'show leaves only',
+                            done: true,
                         },
                         {
                             id: 'text matching'

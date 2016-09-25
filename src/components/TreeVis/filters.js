@@ -1,20 +1,60 @@
 export default {
-    leavesOnly,
-    subtree
+    leaves,
+    subtree,
+    done,
+    todo,
+    unestimated
 }
 
-function leavesOnly(tree, filterVal) {
-    return {
-        id: `leaves of ${tree.id}`,
-        children: searchForAll(
-            tree,
-            (testTree) => !(testTree.children && testTree.children.length)
-        )
-    }
+function unestimated(tree, filterVal) {
+    return leavesFilter(
+        'unestimated',
+        tree,
+        (testTree) => !(testTree.children && testTree.children.length) && !testTree.poms
+    )
+}
+
+function todo(tree, filterVal) {
+    return leavesFilter(
+        'unfinished',
+        tree,
+        (testTree) => !(testTree.children && testTree.children.length) && !testTree.done
+    )
+}
+
+
+function done(tree, filterVal) {
+    return leavesFilter(
+        'completed',
+        tree,
+        (testTree) => !(testTree.children && testTree.children.length) && testTree.done
+    )
+}
+
+function leaves(tree, filterVal) {
+    return leavesFilter(
+        'all',
+        tree,
+        (testTree) => !(testTree.children && testTree.children.length)
+    )
 }
 
 function subtree(tree, filterVal) {
     return searchForOne(tree, (testTree) => testTree.id === filterVal)
+}
+
+/**
+ * Private utils
+ */
+
+function leavesFilter(propName, tree, filter) {
+    return {
+        id: `${propName} leaves of ${tree.id}`,
+        children: searchForAll(
+            tree,
+            filter
+        )
+    }
 }
 
 function searchForAll(tree, condition, result=[]) {
