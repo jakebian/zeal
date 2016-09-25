@@ -21,7 +21,7 @@ function getGraphNodes(tree) {
             tree.poms ? '(' + tree.poms + ')' : (
                 tree.children && tree.children.length ? (
                     '(' + completedPoms + '/' + totalPoms + ')'
-                ) : '(unestimated!)'
+                ) : '(1)'
             )}`,
             /**
              * TODO: at some point we'll have to sacrifice functional-ness

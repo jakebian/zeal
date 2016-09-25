@@ -1,12 +1,12 @@
+import buildLogsViewTask from './logsView'
+
 export default {
     id: 'producitivty tools',
     children: [
         {
             id: 'zeal',
             children: [
-                {
-                    id: 'pomo logs view'
-                },
+                buildLogsViewTask
                 {
                     id: 'filters',
                     children: [

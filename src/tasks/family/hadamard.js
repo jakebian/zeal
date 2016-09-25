@@ -36,7 +36,11 @@ export default {
                     done: true
                 },
                 {
-                    id: 'deployment on aws'
+                    id: 'deployment on GCE',
+                    done: true
+                },
+                {
+                    id: 'hadamard-serving automation'
                 },
                 {
                     id: 'machine status display & visualization',
