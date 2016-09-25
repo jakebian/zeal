@@ -37,21 +37,21 @@ shows leaves of the subtree `familyLifeTasks`.
 
 ### Available filters
 
-### subtree@[taskId]
+### \#subtree@[taskId]
 Show only the subtree starting at a certain node
 ![screenshot from 2016-09-25 15-38-03](https://cloud.githubusercontent.com/assets/5866348/18818776/e167f064-8337-11e6-9392-8d43828322aa.png)
 
 
 ![Uploading Screenshot from 2016-09-25 15-37-26.png…]()
-### leaves
+### \#leaves
 Show leaves of the tree
 ![screenshot from 2016-09-25 15-37-26](https://cloud.githubusercontent.com/assets/5866348/18818778/e16aaca0-8337-11e6-8141-5c735d8226b5.png)
 
-### done
+### \#done
 Shows completed leaves
 
-### todo
+### \#todo
 Shows marked not done
 
-### unestimated
+### \#unestimated
 Shows leaves missing a pomodoro estimate.
