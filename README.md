@@ -1,6 +1,6 @@
 # Zeal
 
-Pomodoro-centric, heirarchical task list.
+Pomodoro-centric, hierarchical task list.
 
 
 ## Why?
@@ -13,7 +13,7 @@ Zeal is a project management tool I built for myself.
 
 - I want to see my project structure
 
-   - When starting a project, I want to start with big ideas, then break them down into smaller ideas, then break those down further, until my project becomes a list of tasks. I like to keep track of this heirarchical structure of my projects.
+   - When starting a project, I want to start with big ideas, then break them down into smaller ideas, then break those down further, until my project becomes a list of tasks. I like to keep track of this hierarchical structure of my projects.
 
 - I want to see my progress
 
