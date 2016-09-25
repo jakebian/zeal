@@ -8,12 +8,17 @@ function getGraphNodes(tree) {
         data: {
             id: tree.id,
             data: tree.data,
+            label: `${tree.id} ${
+            tree.poms ? '(' + tree.poms + ')' : (
+                tree.children && tree.children.length ? '' : '(unestimated!)'
+            )}`,
             /**
              * TODO: at some point we'll have to sacrifice functional-ness
              * for performance here and only compute these values once.
              */
             numChildren: numChildren,
-            completion: numChildren != 0 ? getNumCompletedChildren(tree) / numChildren : +!!tree.done
+            completion: numChildren != 0 ? getNumCompletedChildren(tree) / numChildren : +!!tree.done,
+            totalPoms: getPoms(tree),
         }
     }].concat(
         tree.children ? tree.children.reduce(
@@ -39,6 +44,13 @@ function getGraphLinks(tree) {
         ), [])
 
         : []
+}
+
+function getPoms(tree) {
+    return tree.children ?
+        tree.children.reduce(
+            (numPoms, child) => numPoms + getPoms(child), 0
+        ) :  (tree.poms || 1)
 }
 
 function getNumChildren(tree) {

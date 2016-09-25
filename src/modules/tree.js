@@ -7,12 +7,11 @@ export function updateTree (tree) {
     };
 }
 
-
 export function treeReducer (state = { isEmpty: true }, action) {
     switch (action.type) {
         case updateActionType:
-            return action.tree || state;
+            return action.tree || state
     }
 
-    return state;
+    return state
 }
