@@ -2,7 +2,7 @@
 
 Pomodoro-centric, hierarchical task list.
 
-![screenshot from 2016-09-25 16-39-28](https://cloud.githubusercontent.com/assets/5866348/18819132/f572bbdc-833e-11e6-85a3-209de96a1b3c.png)
+![screenshot from 2016-09-25 16-39-28](https://cloud.githubusercontent.com/assets/5866348/18819144/251fdb30-833f-11e6-98bb-0239de3adc2d.png)
 
 
 
