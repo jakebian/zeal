@@ -1,6 +1,6 @@
 # Zeal
 
-Pomodoro-centric, heirarchical project management.
+Pomodoro-centric, heirarchical task list.
 
 ## How it works
 
