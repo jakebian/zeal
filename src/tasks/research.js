@@ -22,7 +22,7 @@ export default {
             id: 'Holographic dual of sectional curvature',
             children: [
                 {
-                    id: ''
+                    id: 'shight'
                 }
             ]
         }

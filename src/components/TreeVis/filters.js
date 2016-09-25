@@ -4,7 +4,13 @@ export default {
 }
 
 function leavesOnly(tree, filterVal) {
-    return searchForAll(tree, (testTree) => !(testTree.children && testTree.children.length))
+    return {
+        id: `leaves of ${tree.id}`,
+        children: searchForAll(
+            tree,
+            (testTree) => !(testTree.children && testTree.children.length)
+        )
+    }
 }
 
 function subtree(tree, filterVal) {
@@ -15,14 +21,13 @@ function searchForAll(tree, condition, result=[]) {
     return condition(tree) ? [
         ...result, tree
     ] : (
-        tree.children ? [...result, ...(tree.children.reduce(
-            (childrenResult, child) => searchForAll(child, condition, childrenResult)
-        ))] : result
+        tree.children ? tree.children.reduce(
+            (childrenResult, child) => searchForAll(child, condition, childrenResult), result
+        ) : result
     )
 }
 
 function searchForOne(tree, condition) {
-    console.log('tree!', tree)
     return tree && (
         condition(tree) ? tree : (
             tree.children ? tree.children.reduce((result, childTree) => (

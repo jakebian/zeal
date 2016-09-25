@@ -4,9 +4,9 @@ export function computeGraph(tree, filters) {
 
     const filteredTree = filters.reduce((resultTree, filter) => (
         treeFilters[filter.key](resultTree, filter.val)
-    ), tree);
+    ), tree) || {};
 
-    console.log(filteredTree)
+    console.log('filteredTree', filteredTree)
 
     return getGraphNodes(filteredTree).concat(getGraphLinks(filteredTree))
 }

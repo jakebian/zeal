@@ -22,7 +22,7 @@ export class TreeVis extends Component {
         cydagre(cytoscape, dagre);
         this.props.loadTree();
         this.draw();
-        this.props.updateFiltersFromHash
+        this.props.updateFiltersFromHash();
 
         $(window).on('hashchange', this.props.updateFiltersFromHash);
 
