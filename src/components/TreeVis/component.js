@@ -6,7 +6,9 @@ import cydagre from 'cytoscape-dagre';
 import dagre from 'dagre';
 import { computeGraph } from 'components/TreeVis/util';
 import { updateTree } from 'modules/tree'
+import { updateFilters } from'modules/filters'
 import tasks from 'tasks'
+import $ from 'jquery'
 
 let currentTasks = Object.assign({}, tasks);
 
@@ -20,6 +22,10 @@ export class TreeVis extends Component {
         cydagre(cytoscape, dagre);
         this.props.loadTree();
         this.draw();
+        this.props.updateFiltersFromHash
+
+        $(window).on('hashchange', this.props.updateFiltersFromHash);
+
 
     }
     render() {
@@ -80,5 +86,16 @@ export default connect((state) => ({
     tree: state.tree
 }), {
     loadTree: updateTree.bind(null, tasks),
-    updateTree: updateTree
+    updateTree,
+    updateFiltersFromHash: () => (
+        updateFilters(parseFilters(window.location.hash.slice(1)))
+    )
 })(TreeVis)
+
+
+function parseFilters(filterStr) {
+    return filterStr && filterStr.split('#').map((filterSpec) => ({
+        key: filterSpec.split('@')[0],
+        val: filterSpec.split('@')[1]
+    }))
+}
