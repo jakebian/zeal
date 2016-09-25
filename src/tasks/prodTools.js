@@ -16,15 +16,8 @@ export default {
                             done: true,
                         },
                         {
-                            id: 'by tags',
-                            poms: 1
-                        },
-                        {
-                            id: 'by distance from root',
-                            poms: 1
-                        },
-                        {
-                            id: 'only show complete'
+                            id: 'only show complete',
+                            done: true
                         },
                         {
                             id: 'show children of particular node',
@@ -35,7 +28,8 @@ export default {
                             done: true,
                         },
                         {
-                            id: 'text matching'
+                            id: 'by tags',
+                            poms: 1
                         },
                     ]
                 },
@@ -48,7 +42,8 @@ export default {
                         },
                         {
                             id: 'show num pomos',
-                            poms: 1
+                            poms: 1,
+                            done: true
                         },
                         {
                             id: 'selected node state',

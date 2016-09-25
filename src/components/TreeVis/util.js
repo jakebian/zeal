@@ -10,22 +10,25 @@ export function computeGraph(tree, filters) {
 }
 
 function getGraphNodes(tree) {
-    const numChildren = getNumChildren(tree);
+    const totalPoms = getPoms(tree);
+    const completedPoms = getcompletedPoms(tree);
+
     return [{
         data: {
             id: tree.id,
             data: tree.data,
             label: `${tree.id} ${
             tree.poms ? '(' + tree.poms + ')' : (
-                tree.children && tree.children.length ? '' : '(unestimated!)'
+                tree.children && tree.children.length ? (
+                    '(' + completedPoms + '/' + totalPoms + ')'
+                ) : '(unestimated!)'
             )}`,
             /**
              * TODO: at some point we'll have to sacrifice functional-ness
              * for performance here and only compute these values once.
              */
-            numChildren: numChildren,
-            completion: numChildren != 0 ? getNumCompletedChildren(tree) / numChildren : +!!tree.done,
-            totalPoms: getPoms(tree),
+            totalPoms: totalPoms,
+            completedPoms: tree.children ? completedPoms / totalPoms : (+!!tree.done) * (tree.poms || 1)
         }
     }].concat(
         tree.children ? tree.children.reduce(
@@ -60,19 +63,8 @@ function getPoms(tree) {
         ) :  (tree.poms || 1)
 }
 
-function getNumChildren(tree) {
-    return tree.children ?
-        tree.children.reduce(
-            (numChildren, child) => numChildren + 1 + getNumChildren(child), 0
-        ) : 0
-}
-
-function getNumCompletedChildren(tree) {
-    return tree.children ?
-        tree.children.reduce(
-            (numCompleted, child) => numCompleted + (
-                tree.children && tree.children.length ?
-                    getNumCompletedChildren(child) : +!!tree.done
-            ) , 0
-        ) : +!!tree.done
+function getcompletedPoms(tree) {
+    return tree.children ? tree.children.reduce(
+        (numCompleted, child) => numCompleted + getcompletedPoms(child), 0
+    ) : (tree.done ? (tree.poms || 1) : 0)
 }

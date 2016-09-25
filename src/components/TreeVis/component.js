@@ -59,13 +59,13 @@ export class TreeVis extends Component {
                             'text-margin-y': 15,
                             width: 'mapData(totalPoms, 0, 20, 20, 70)',
                             height: 'mapData(totalPoms, 0, 20, 20, 70)',
-                            'background-color': 'mapData(completion, 0, 1, #6F7A8C, #72AD5C)',
+                            'background-color': 'mapData(completedPoms, 0, 1, #6F7A8C, #72AD5C)',
                         }
                     },
                     {
                         selector: 'node:selected',
                         style: {
-                            'background-color': 'mapData(completion, 0, 1, #4A515E, #568046)',
+                            'background-color': 'mapData(completedPoms, 0, 1, #4A515E, #568046)',
                         }
                     },
 
