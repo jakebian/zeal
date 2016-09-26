@@ -13,8 +13,8 @@ export default {
         {
             id: 'Tensor Netorks as 0+1 TQFT',
             children: [
-
-{                    id: 'plan out these tasks'
+                {
+                    id: 'plan out these tasks'
                 }
             ]
         },
