@@ -5,9 +5,7 @@ export default {
             id: 'open-api',
             children: [
                 {
-                    id: 'Polish python endpoint for hadamard',
-                    poms: 24,
-                    done: true
+                    id: 'Polish python endpoint for hadamard'
                 },
                 {
                     id: 'Load models from fchollet'
@@ -18,13 +16,10 @@ export default {
                         {
                             id: 'fix gpu support'
                         },
-                    ],
-                    pom: 24,
-                    done: true
+                    ]
                 },
                 {
-                    id: 'pick a fucking name',
-                    done: true
+                    id: 'pick a fucking name'
                 }
             ]
         },
@@ -45,19 +40,13 @@ export default {
                     done: true
                 },
                 {
-                    id: 'hadamard-serving automation',
-                    poms: 24
+                    id: 'hadamard-serving automation'
                 },
                 {
                     id: 'machine status display & visualization',
                     children: [
                         {
-                            id: 'plan this out',
-                            poms: 2
-                        },
-                        {
-                            id: 'implementation',
-                            poms: 24
+                            id: 'plan this out'
                         }
                     ]
                 }

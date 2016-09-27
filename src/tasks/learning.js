@@ -4,8 +4,31 @@ export default {
 
         {
             id: 'Kick off learning planning',
-            poms: 4
+            poms: 4,
+            done: true
         },
+        {
+            id: 'Contact geometry & symplectic geometry',
+            children: [
+                {
+                    id: 'Review symplectic manifolds',
+                    poms: 24
+                },
+                {
+                    id: 'Contact manifolds: Defn and examples',
+                    poms: 24
+                },
+                {
+                    id: 'Natural Riemann structures',
+                    poms: 12
+                },
+                {
+                    id: 'Riemann structure on Unit Tangent Bundle',
+                    poms: 24
+                }
+            ]
+        },
+
         {
             id: 'More Algebraic Geometry',
             children: [
@@ -66,17 +89,15 @@ export default {
             ]
         },
 
-        {
-            id: 'Contact geometry & symplectic geometry',
-            children: [
-                {
-                    id: 'plan out these tasks'
-                }
-            ]
-        },
 
         {
             id: 'Persistence & Topological data analysis',
+            children: [
+                {
+                    id: `Read Gunther's review`,
+                    poms: 24
+                }
+            ]
         }
     ]
 }
