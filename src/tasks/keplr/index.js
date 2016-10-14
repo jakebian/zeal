@@ -2,6 +2,7 @@ import hera from './hera'
 import hadamard from './hadamard'
 import picard from './picard'
 import noether from './noether'
+import hodge from './hodge'
 
 export default {
     id: 'keplr',
@@ -11,13 +12,6 @@ export default {
         hadamard,
         picard,
         noether,
-        {
-            id: 'Hodge',
-            children: [
-                {
-                    id: 'plan out hodge'
-                }
-            ]
-        }
+        hodge
     ]
 }
